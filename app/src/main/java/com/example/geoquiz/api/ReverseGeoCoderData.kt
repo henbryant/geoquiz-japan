@@ -3,12 +3,12 @@ package com.example.geoquiz.api
 import com.squareup.moshi.Json
 
 data class ReverseGeoCoderData(
-    @Json(name = "Feature")
+    @param:Json(name = "Feature")
     var features: List<Feature>? = null
 ) {
 
     data class Feature(
-        @Json(name = "Property")
+        @param:Json(name = "Property")
         val property: Property? = null,
     )
 

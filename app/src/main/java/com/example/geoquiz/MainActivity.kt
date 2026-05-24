@@ -40,12 +40,10 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun createMapClickListener(): OnMapClickListener {
-        return object : OnMapClickListener {
-            override fun onMapClick(point: com.mapbox.geojson.Point): Boolean {
-                Log.d("MapClick", "Clicked at lat: ${point.latitude()}, lon: ${point.longitude()}")
-                handleMapClick(point)
-                return false
-            }
+        return OnMapClickListener { point ->
+            Log.d("MapClick", "Clicked at lat: ${point.latitude()}, lon: ${point.longitude()}")
+            handleMapClick(point)
+            false
         }
     }
 
